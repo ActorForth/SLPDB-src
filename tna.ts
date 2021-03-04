@@ -68,6 +68,10 @@ export class TNA {
                                 (scriptSigHexArray[1].length === 66 || scriptSigHexArray[1].length === 130)
                             ) {
                                 address = Utils.slpAddressFromHash160(redeemScriptHash160, options.network, "p2pkh")
+                            }
+                            if (options.network === 'regtest'){
+                              // TODO protential problem with regtest Hash160
+                              sender.a = Utils.toSlpRegtestAddress(input.script.toAddress(net).toString(bitcore.Address.CashAddrFormat));
                             } else {
                                 // otherwise attempt decode of p2sh
                                 address = Utils.slpAddressFromHash160(redeemScriptHash160, options.network, "p2sh")
