@@ -12,7 +12,7 @@ import { DefaultAddOptions } from 'p-queue';
 import { SlpGraphManager } from './slpgraphmanager';
 import { CacheMap } from './cache';
 import { SlpTransactionDetailsDbo, TokenUtxoStatus,
-         BatonUtxoStatus, TokenBatonStatus, GraphTxn, TokenDBObject } from './interfaces';
+         BatonUtxoStatus, TokenBatonStatus, GraphTxn, TokenDBObject, GraphTxnDbo } from './interfaces';
 import { GraphMap } from './graphmap';
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
